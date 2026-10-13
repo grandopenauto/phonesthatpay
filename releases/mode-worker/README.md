@@ -1,13 +1,15 @@
-# HDP Mode Worker · Direct beta release channel
+# HDP Mode Worker — Direct beta release channel
 
-This directory hosts an experimental, explicitly user-approved Android app update feed for the **HDP Mode Worker** testing phone. It is not a Google Play distribution channel, a production release, or a promise of work or earnings.
+Latest beta: **v0.4.0** (Android version code 4).
 
-- Current release: v0.3.0 (version code 3).
-- Release metadata: [latest.json](./latest.json).
-- APK: [mode-worker-v0.3.0.apk](./v0.3.0/mode-worker-v0.3.0.apk).
-- Builds are signed for local beta testing; the Android installation screen remains the user's decision.
-- Updates must have a matching installed package signature and a SHA-256 digest matching the HTTPS metadata.
-- The direct-beta Android manifest requests REQUEST_INSTALL_PACKAGES; **do not ship this build into the Google Play channel**. For Play, create a separately verified build without the sideload install permission and use Play-managed updates.
-- Avoid retaining obsolete private-key materials in public code repositories. The APK contains no private signing key.
+This GitHub Pages release feed supports consent-first Android updates for the HDP Mode Worker app on a test phone. It is **not Google Play**, an open jobs network, or an earnings program.
 
-For production deployment, implement release review and immutable version policy, security monitoring, proper app signing key management, and rollback planning.
+The in-app **Check HDP releases** control reads [latest.json](./latest.json). For this v0.4 trial, users running v0.3 can check for build 4, download the signed APK, and explicitly hand installation to Android, which may ask for permission to install from this source.
+
+- Versioned APK: [v0.4.0/mode-worker-v0.4.0.apk](./v0.4.0/mode-worker-v0.4.0.apk).
+- Manifest: [latest.json](./latest.json).
+- The downloaded file must match its manifest byte length and SHA-256 digest, app package, increased version code, and installed signing certificate before the updater offers installation.
+- The app contains no arbitrary remote command executor and no background installation mechanism.
+- The direct sideload beta uses REQUEST_INSTALL_PACKAGES; a **separate Google Play build must remove this permission** and use Play-managed updates.
+
+The new-version download/install process is an experiment and must be verified on a physical Android device before being described as fully functional. Any new release needs explicit promotion, verified signing keys and hashes, security review, and a regression test. Public beta APKs should not be marketed as production app-store releases.
