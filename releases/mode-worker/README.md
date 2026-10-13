@@ -1,15 +1,13 @@
-# HDP Mode Worker — Android direct-beta releases
+# HDP Mode Worker — Android Direct Beta Releases
 
-**Latest published build: v0.6.0 (versionCode 6).**
+Latest published version **v0.7.0** (versionCode 7).
 
-This is a narrowly scoped, signed APK canary used to test an on-device update from Android 10 Mode Worker v0.5.0 to v0.6.0. It is not a Google Play production release, and there are no paid jobs or guaranteed earnings.
+This release is a small on-device update canary for testing the first fully scheduled BuildOS v0.2.1 build, artifact transfer through private Google Sheets, and Android user-approved update from v0.6.0. This is not a production Play Store build, earnings guarantee or general-user release.
 
-- [Latest HTTPS manifest](./latest.json) (schema `hdp.mobile.release.v1`).
-- [v0.6.0 signed APK](./v0.6.0/mode-worker-v0.6.0.apk), size 25140 bytes, SHA-256 `95d81d01b6ea5f52f958fdf76d941b13dc3c783bffb8dda0ee18914b6e54b3e4`.
-- APK `com.highestdegreepriorities.modeworker`, versionCode 6, versionName 0.6.0.
-- Signing certificate SHA-256 `05b08f3b35ee583b25b4cb842db1d9bedb4d91d06bd8bca4f444f3a2c55f7293`, retained from v0.5.0 and previous versions.
-- Independently verified Android APK v2 and v3 signature digests and RSA signatures before publication.
-
-**Device-side test remains pending.** On a v0.5.0 phone the owner should tap Check HDP releases, Download verified update, and Open Android installer; Android approval remains mandatory. If any error appears, retain the existing version and capture the exact error before using a manual APK fallback.
-
-Publishing an APK and manifest does not prove successful device installation, enrollment, silent updates, remote administration, or background work. REQUEST_INSTALL_PACKAGES is for this direct beta only; a Google Play release requires a separate compliant build and signing/distribution plan.
+- [Latest manifest](./latest.json): hdp.mobile.release.v1.
+- [Signed v0.7.0 APK](./v0.7.0/mode-worker-v0.7.0.apk): 25140 bytes, SHA-256 ed611f2140037dce431dda5bbed9180023f5dc7cc8fb6420e17178288acb22f8.
+- Android package: com.highestdegreepriorities.modeworker; versionCode: 7; versionName: 0.7.0.
+- Signing cert pinned from prior working Mode Worker releases: 05b08f3b35ee583b25b4cb842db1d9bedb4d91d06bd8bca4f444f3a2c55f7293.
+- BuildOS queue job MW07-MODEWORKER-POLICYRETRY-002 returned BUILT, exit code 0, signed artifact size 25140, 5/5 Google Sheets chunks. SHA-256 independently reconstructed and checked before GitHub publication.
+- Phone update v0.6.0→v0.7.0 is NOT yet proven until the user tests and confirms. Android controls installation approval, and Google Play Protect may present additional security prompts.
+- No silent installs, remote phone control or background enrollment. First-party Play-managed release signing and store distribution remain future work.
