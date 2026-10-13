@@ -1,16 +1,15 @@
-# HDP Mode Worker — direct-beta update channel
+# HDP Mode Worker — Android direct-beta releases
 
-Latest published build: **v0.5.0** (versionCode 5).
+**Latest published build: v0.6.0 (versionCode 6).**
 
-This is a signed, debug-key Android beta release for HDP's Mode Worker testing device. It is **not** a Play Store release, a job-placement service, or a guarantee of earning income.
+This is a narrowly scoped, signed APK canary used to test an on-device update from Android 10 Mode Worker v0.5.0 to v0.6.0. It is not a Google Play production release, and there are no paid jobs or guaranteed earnings.
 
-The v0.5 update manager addresses a known Android 9/10 behavior: `getPackageArchiveInfo()` may return package details but omit archive `signingInfo`. The app checks that the downloaded APK matches the expected package and increasing version, exact public release manifest SHA-256 and byte length, a pinned signing certificate identity, and the installed app's signing identity. When Android 10 does not provide the archive's signing metadata, the user-visible message distinguishes download verification from APK signing verification. The operating system's package installer independently verifies APK signing and compatibility before accepting any update; **the user must approve installation**.
+- [Latest HTTPS manifest](./latest.json) (schema `hdp.mobile.release.v1`).
+- [v0.6.0 signed APK](./v0.6.0/mode-worker-v0.6.0.apk), size 25140 bytes, SHA-256 `95d81d01b6ea5f52f958fdf76d941b13dc3c783bffb8dda0ee18914b6e54b3e4`.
+- APK `com.highestdegreepriorities.modeworker`, versionCode 6, versionName 0.6.0.
+- Signing certificate SHA-256 `05b08f3b35ee583b25b4cb842db1d9bedb4d91d06bd8bca4f444f3a2c55f7293`, retained from v0.5.0 and previous versions.
+- Independently verified Android APK v2 and v3 signature digests and RSA signatures before publication.
 
-- Current [latest manifest](./latest.json).
-- Immutable [v0.5.0 APK](./v0.5.0/mode-worker-v0.5.0.apk).
-- Previous [v0.4.0 APK](./v0.4.0/mode-worker-v0.4.0.apk) remains available.
-- The in-app update flow is still under real-device testing. The public build and the HTTPS checksum/signing verification are not evidence that an Android user completed installation from inside the app.
-- No ADB, silent installation, general remote device control, or automatic telemetry is implemented.
-- A future Google Play build should remove the direct-beta `REQUEST_INSTALL_PACKAGES` permission and use Play-managed distribution.
+**Device-side test remains pending.** On a v0.5.0 phone the owner should tap Check HDP releases, Download verified update, and Open Android installer; Android approval remains mandatory. If any error appears, retain the existing version and capture the exact error before using a manual APK fallback.
 
-Release publication requires explicit approval, increasing version code, pinned signing identity and verified on-device behavior before rollout to additional users.
+Publishing an APK and manifest does not prove successful device installation, enrollment, silent updates, remote administration, or background work. REQUEST_INSTALL_PACKAGES is for this direct beta only; a Google Play release requires a separate compliant build and signing/distribution plan.
