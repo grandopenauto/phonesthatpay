@@ -1,11 +1,11 @@
 {
   "schema": "hdp.mobile.release.v1",
   "package_id": "com.highestdegreepriorities.modeworker",
-  "version_code": 4,
-  "version_name": "0.4.0",
-  "apk_url": "https://phonesthatpay.com/releases/mode-worker/v0.4.0/mode-worker-v0.4.0.apk",
-  "size_bytes": 22225,
-  "sha256": "343901156c1038811209b953e52d4b060fec8239be39f9bfdd577004d089f007",
+  "version_code": 5,
+  "version_name": "0.5.0",
+  "apk_url": "https://phonesthatpay.com/releases/mode-worker/v0.5.0/mode-worker-v0.5.0.apk",
+  "size_bytes": 22653,
+  "sha256": "836ebfd04762a3c67530af1f822ebe85c2a25db1e9a4fefd5272d2e3782bbaf6",
   "signing_cert_sha256": "05b08f3b35ee583b25b4cb842db1d9bedb4d91d06bd8bca4f444f3a2c55f7293",
   "channel": "direct-beta",
   "manual_android_approval": true
