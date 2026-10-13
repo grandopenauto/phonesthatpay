@@ -1,13 +1,13 @@
 # HDP Mode Worker — Android Direct Beta Releases
 
-Latest published version **v0.7.0** (versionCode 7).
+Latest published version **v0.8.0** (versionCode 8), distributed as an owner-approved direct beta APK. This is not a Google Play production release.
 
-This release is a small on-device update canary for testing the first fully scheduled BuildOS v0.2.1 build, artifact transfer through private Google Sheets, and Android user-approved update from v0.6.0. This is not a production Play Store build, earnings guarantee or general-user release.
-
-- [Latest manifest](./latest.json): hdp.mobile.release.v1.
-- [Signed v0.7.0 APK](./v0.7.0/mode-worker-v0.7.0.apk): 25140 bytes, SHA-256 ed611f2140037dce431dda5bbed9180023f5dc7cc8fb6420e17178288acb22f8.
-- Android package: com.highestdegreepriorities.modeworker; versionCode: 7; versionName: 0.7.0.
-- Signing cert pinned from prior working Mode Worker releases: 05b08f3b35ee583b25b4cb842db1d9bedb4d91d06bd8bca4f444f3a2c55f7293.
-- BuildOS queue job MW07-MODEWORKER-POLICYRETRY-002 returned BUILT, exit code 0, signed artifact size 25140, 5/5 Google Sheets chunks. SHA-256 independently reconstructed and checked before GitHub publication.
-- Phone update v0.6.0→v0.7.0 is NOT yet proven until the user tests and confirms. Android controls installation approval, and Google Play Protect may present additional security prompts.
-- No silent installs, remote phone control or background enrollment. First-party Play-managed release signing and store distribution remain future work.
+- [Latest release manifest](./latest.json): schema `hdp.mobile.release.v1`.
+- [v0.8.0 APK](./v0.8.0/mode-worker-v0.8.0.apk): 37,428 bytes, SHA-256 `0d59dc98ce4e55b9c256c651426b7f6e1c4d9be74aed817c7445951d4ebb23da`.
+- [Immutable v0.8.0 manifest](./v0.8.0/release.json) with the same checksum.
+- Android package `com.highestdegreepriorities.modeworker`, versionCode 8, versionName 0.8.0.
+- HDP beta signing certificate SHA-256: `05b08f3b35ee583b25b4cb842db1d9bedb4d91d06bd8bca4f444f3a2c55f7293`.
+- The existing BuildOS job `MW08-ENROLLMENT-PILOT-001` finished BUILT/exit 0. Its 7 private Google Sheets artifact chunks were reassembled, and the exact APK SHA-256 and both embedded v2/v3 signer certificate fingerprints independently matched.
+- v0.8 adds the opt-in HDP worker enrollment/status interface while preserving the existing worker ID, current app icon, and Android OS approval requirement.
+- The enrollment backend passed a synthetic HTTPS pilot (invite, pending approval, consented heartbeat, receipt, rate limit, withdrawal and revocation). **Physical phone v0.7 to v0.8 update and real-device enrollment have not yet been confirmed.**
+- No silent installs, guaranteed earnings, general-user release, or background enrollment. Device owner approval remains required; Google's Play Protect checks and Android installer controls must be respected. Production release signing and Google Play distribution remain separate future work.
